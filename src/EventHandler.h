@@ -26,18 +26,14 @@ public:
 	EventHandler();
 	virtual ~EventHandler();
 
-	void addEvent(const SDL_Event &event);
+	void pushEvent(const SDL_Event &event);
 	const SDL_Event getEvent();
+	virtual void pollEvent() = 0;
 
 	static void addHandler(const std::thread::id &thread_id, EventHandler *handler);
 	static void removeHandler(EventHandler *handler);
 	// end after all handler closed
 	static void startHandling();
-
-//	struct Handler
-//	{
-//
-//	};
 
 private:
 	static bool isContainsAnyHandler();

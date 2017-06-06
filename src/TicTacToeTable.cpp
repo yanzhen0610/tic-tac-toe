@@ -191,6 +191,7 @@ void TicTacToeTable::onClick(const SDL_Event &event)
 							&& !player->isAI())
 					{
 						_tictactoe->set(row, col, *player);
+						show(_tictactoe->getTable());
 						_tictactoe->nextMove();
 						show(_tictactoe->getTable());
 					}

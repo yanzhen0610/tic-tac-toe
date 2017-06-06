@@ -33,7 +33,7 @@ EventHandler::~EventHandler()
 	// TODO Auto-generated destructor stub
 }
 
-void EventHandler::addEvent(const SDL_Event &event)
+void EventHandler::pushEvent(const SDL_Event &event)
 {
 	_waiting_mutex.unlock();
 	std::lock_guard<std::mutex> lock(_event_mutex);
@@ -105,7 +105,7 @@ void EventHandler::startHandling()
 				handler_set = thread_handler_pair.second;
 				for (EventHandler *handler : handler_set)
 				{
-					handler->addEvent(event);
+					handler->pushEvent(event);
 				}
 			}
 //			_handler_modification_mutex.unlock();

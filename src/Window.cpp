@@ -195,6 +195,7 @@ void thread_display(Window *w)
 		w->nextFrame();
 		if (w->_is_locking_fps_to_60)
 		{
+			// sleep until a perfect moment
 			std::this_thread::sleep_until(time_to_next_frame);
 		}
 	}

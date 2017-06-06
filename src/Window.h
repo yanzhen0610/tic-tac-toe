@@ -76,6 +76,7 @@ private:
 	std::mutex _clickable_list_mutex;
 	std::mutex _display_list_mutex;
 	std::vector<Displayable*> _display_list;
+	std::vector<Clickable*> _clickable_list;
 
 	std::thread *_thread_display = nullptr;
 	std::thread *_thread_event_handler = nullptr;
@@ -86,8 +87,6 @@ protected:
 	SDL_Window *_window = nullptr;
 	std::thread::id _window_thread_id;
 	SDL_Renderer *_renderer = nullptr;
-
-	std::vector<Clickable*> _clickable_list;
 
 private:
 	static std::mutex _init_lock;

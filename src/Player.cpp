@@ -105,13 +105,15 @@ static int minimax(const Table &table, Piece piece)
 	const int TL = Table::TABLE_L;
 	Piece winnerPiece = winner(table);
 	if (winnerPiece == piece)
+	{
 		return 1;
+	}
 	else if (winnerPiece == hostile(piece))
+	{
 		return -1;
+	}
 
-	int pieces = 0;
-	int score = -2;
-	int thisScore;
+	int score = -2, thisScore;
 	int i, j;
 	for (i = 0; i < TL; ++i)
 	{
@@ -123,15 +125,13 @@ static int minimax(const Table &table, Piece piece)
 				_table[i][j] = piece;
 				thisScore = -minimax(_table, hostile(piece));
 				if (thisScore > score)
+				{
 					score = thisScore;
-			}
-			else
-			{
-				++pieces;
+				}
 			}
 		}
 	}
-	if (pieces == TL * TL)
+	if (score == -2)
 	{
 		return 0;
 	}
@@ -142,7 +142,7 @@ const Movement AI_Impossible::nextStep(const Table &table) const
 {
 	auto TL = Table::TABLE_L;
 	Piece piece = getPiece();
-	int movei = -1, movej = -1;
+	int movei, movej;
 	int score = -2, tempScore;
 	int i, j;
 	for (i = 0; i < TL; ++i)
@@ -163,7 +163,7 @@ const Movement AI_Impossible::nextStep(const Table &table) const
 			}
 		}
 	}
-	if (movei == -1)
+	if (score == -2)
 	{
 		return Movement();
 	}
