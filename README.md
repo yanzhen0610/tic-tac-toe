@@ -1,6 +1,6 @@
 # tic_tac_toe
 
-it's using the algorithm - minimax to implement AI which is impossible to win. and the gui is using library sdl2. in this project it implement multithreading for rendering and eventhandler. code sperate with object-oriented concept.
+it's using the algorithm - minimax to implement AI which is impossible to win. and the gui is using library sdl2. in this project it implement multithreading for rendering and eventhandler. code organized with object-oriented and mvc concepts.
 
 the programming language is using c++
 
