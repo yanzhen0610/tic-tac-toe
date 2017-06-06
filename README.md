@@ -9,4 +9,4 @@ the exe file can download here
 
 i'm sorry about the resolution. it's hard-code 1600 by 900. all the components are using absolute x-y axis coordinate. so, it's not flexible. sorry to the users who has screen which resolution lower than 1600 by 900.
 
-this project was built with eclipse
+this project was built with eclipse. you can simply import this project into eclipse, but remember to configure compiler setting. if you're using mingw32 compiler, should add the following command to linker "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf"
