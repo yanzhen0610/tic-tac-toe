@@ -4,4 +4,5 @@ it's using the algorithm - minimax to implement AI which is impossible to win. a
 
 the programming language is using c++
 
-the exe file can download <p href="https://github.com/yanzhen0610/tic-tac-toe/raw/master/Release.zip">here</p>
+the exe file can download here
+<a href="https://github.com/yanzhen0610/tic-tac-toe/raw/master/Release.zip">https://github.com/yanzhen0610/tic-tac-toe/raw/master/Release.zip</a>
